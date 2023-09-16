@@ -28,6 +28,8 @@ text_search = st.text_input("Search Offers by Category, Brand or Retailer", valu
 
 if text_search:
     # st.empty()
+    st.cache_resource.clear()
+    
     text_search = preprocess_text(text_search)
     search_data = embeddings.search(text_search, 30)
 
